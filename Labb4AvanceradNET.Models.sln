@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb4AvanceradNET.Models", "Labb4AvanceradNET.Models\Labb4AvanceradNET.Models.csproj", "{03F1BAC2-C6DB-4A03-8D80-419EBEE08454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labb4AvanceradNET.API", "Labb4AvanceradNET.API\Labb4AvanceradNET.API.csproj", "{A8887FF7-809E-4E9F-9DD8-49DBF9FF2B57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F1BAC2-C6DB-4A03-8D80-419EBEE08454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F1BAC2-C6DB-4A03-8D80-419EBEE08454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F1BAC2-C6DB-4A03-8D80-419EBEE08454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F1BAC2-C6DB-4A03-8D80-419EBEE08454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8887FF7-809E-4E9F-9DD8-49DBF9FF2B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8887FF7-809E-4E9F-9DD8-49DBF9FF2B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8887FF7-809E-4E9F-9DD8-49DBF9FF2B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8887FF7-809E-4E9F-9DD8-49DBF9FF2B57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AC503BF-1F26-4013-BF33-AA8457B63944}
+	EndGlobalSection
+EndGlobal
