@@ -13,7 +13,7 @@ namespace Labb4AvanceradNET.Models
         public string LastName { get; set; }
 
         public string PhoneNumber { get; set; }
-
+        public ICollection<UserInterest> Interests { get; set; }
         
 
 

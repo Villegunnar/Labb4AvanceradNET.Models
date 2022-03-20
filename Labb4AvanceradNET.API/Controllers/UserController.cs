@@ -49,6 +49,27 @@ namespace Labb4AvanceradNET.Models
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error to retrieve singel user from database.");
             }
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetUserWithInterest(int id)
+        {
+            try
+            {
+                var result = await _userRepo.GetSingel(id);
+                if (result == null)
+                {
+                    return NotFound();
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error to retrieve singel user from database.");
+            }
+        }
+
+
         [HttpPost]
         public async Task<ActionResult<User>> CreateNewUser(User newUser)
         {

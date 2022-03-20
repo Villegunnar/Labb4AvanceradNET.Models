@@ -44,6 +44,23 @@ namespace Labb4AvanceradNET.Models
             return await _appContext.Interests
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
+        //public async Task<Interest> GetSingel2(int id)
+        //{
+            //return  await (from e in _appContext.Users
+            //                    join d in _appContext.Interests
+            //                    on e.Id equals d.Id
+            //                    select new
+            //                    {
+            //                        Username = e.FirstName,
+            //                        IntrestName = d.InterestName,
+            //                    }).ToListAsync();
+
+            
+
+
+            //return await _appContext.Interests
+            //    .FirstOrDefaultAsync(p => p.Id == id);
+        //}
 
         public async Task<Interest> Update(Interest Entity)
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Labb4AvanceradNET.Models
 {
@@ -11,8 +12,9 @@ namespace Labb4AvanceradNET.Models
         public string InterestName { get; set; }
         public string Description { get; set; }
 
-        public int FUserId { get; set; }
-        public User User { get; set; }
         
+        public ICollection<Webbsite> Webbsites { get; set; }
+        public ICollection<UserInterest> Users { get; set; }
+
     }
 }
