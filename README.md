@@ -11,9 +11,9 @@
  ![bild](https://user-images.githubusercontent.com/91311247/159766844-3916f69c-d4eb-4fab-a111-fdc3df3bb414.png)
  
  ### Koppla en person till ett nytt intresse
- ### Skapar ett nytt intresse via POST
+ ### Skapar ett nytt intresse och kopplar det till UsedId:1 via POST
  ![bild](https://user-images.githubusercontent.com/91311247/159767440-979d43ad-9c39-4546-a432-4fea8bbbe774.png)
- ### PUT
+ ### Modifierar ett existerande intresse och ändrar UserId till 1 via PUT
  ![bild](https://user-images.githubusercontent.com/91311247/159770972-8097f4d9-1a0e-4443-8fc9-a2d0abca870b.png)
 
  
