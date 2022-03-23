@@ -21,5 +21,9 @@
     <ProjectReference Include="..\Labb4AvanceradNET.Models\Labb4AvanceradNET.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 </Project>

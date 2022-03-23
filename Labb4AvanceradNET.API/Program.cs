@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Labb4AvanceradNET.API
+namespace Labb4AvanceradNET.API.API
 {
     public class Program
     {

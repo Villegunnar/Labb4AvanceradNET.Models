@@ -12,9 +12,12 @@ namespace Labb4AvanceradNET.Models
         public string InterestName { get; set; }
         public string Description { get; set; }
 
-        
-        public ICollection<Webbsite> Webbsites { get; set; }
-        public ICollection<UserInterest> Users { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
+
+
+
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿
+﻿using Labb4AvanceradNET.API.Services;
+using Labb4AvanceradNET.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Labb4AvanceradNET.Models
+namespace Labb4AvanceradNET.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -31,7 +32,7 @@ namespace Labb4AvanceradNET.Models
             }
 
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             try
@@ -39,7 +40,7 @@ namespace Labb4AvanceradNET.Models
                 var result = await _userRepo.GetSingel(id);
                 if (result == null)
                 {
-                    return NotFound();
+                    return NotFound($"User with Id: '{id}' could not be found in the database");
                 }
                 return result;
             }
@@ -50,24 +51,6 @@ namespace Labb4AvanceradNET.Models
             }
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUserWithInterest(int id)
-        {
-            try
-            {
-                var result = await _userRepo.GetSingel(id);
-                if (result == null)
-                {
-                    return NotFound();
-                }
-                return result;
-            }
-            catch (Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error to retrieve singel user from database.");
-            }
-        }
 
 
         [HttpPost]
@@ -90,9 +73,6 @@ namespace Labb4AvanceradNET.Models
 
                 throw;
             }
-
-
-
         }
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
@@ -102,7 +82,7 @@ namespace Labb4AvanceradNET.Models
                 var deletePro = await _userRepo.GetSingel(id);
                 if (deletePro == null)
                 {
-                    return NotFound($"User with ID : {id} was not found.");
+                    return NotFound($"User with Id: '{id}' could not be found in the database");
                 }
 
                 return await _userRepo.Delete(id);
@@ -128,7 +108,7 @@ namespace Labb4AvanceradNET.Models
                 var proToUpdate = await _userRepo.GetSingel(id);
                 if (proToUpdate == null)
                 {
-                    return NotFound($"User with ID : {id} was not found.");
+                    return NotFound($"User with Id: '{id}' could not be found in the database");
                 }
                 return await _userRepo.Update(pro);
 
@@ -139,6 +119,20 @@ namespace Labb4AvanceradNET.Models
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     "Error to update user in database.");
             }
+        }
+
+        [HttpGet("{searchforuser}")]
+        public async Task<ActionResult<User>> SearchUsers(string name)
+        {
+
+            var searchResult =  await _userRepo.SearchUsers(name);
+
+            if (searchResult.Any())
+            {
+                return Ok(searchResult);
+            }
+            return NotFound($"Could not find any user containing {name} in the database");
+
         }
     }
 }

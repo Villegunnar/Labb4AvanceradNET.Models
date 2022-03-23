@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Labb4AvanceradNET.Models
 {
-    public class Webbsite
+    public class Website
     {
         [Key]
         public int Id { get; set; }

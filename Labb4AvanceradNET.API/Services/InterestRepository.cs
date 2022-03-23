@@ -1,11 +1,12 @@
-﻿
+﻿using Labb4AvanceradNET.API.Models;
+using Labb4AvanceradNET.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Labb4AvanceradNET.Models
+namespace Labb4AvanceradNET.API.Services
 {
     public class InterestRepository : IProgramRepository<Interest>
     {
@@ -26,7 +27,7 @@ namespace Labb4AvanceradNET.Models
             var result = await _appContext.Interests.FirstOrDefaultAsync(p => p.Id == id);
             if (result != null)
             {
-                 _appContext.Interests.Remove(result);
+                _appContext.Interests.Remove(result);
                 await _appContext.SaveChangesAsync();
                 return result;
             }
@@ -44,23 +45,7 @@ namespace Labb4AvanceradNET.Models
             return await _appContext.Interests
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
-        //public async Task<Interest> GetSingel2(int id)
-        //{
-            //return  await (from e in _appContext.Users
-            //                    join d in _appContext.Interests
-            //                    on e.Id equals d.Id
-            //                    select new
-            //                    {
-            //                        Username = e.FirstName,
-            //                        IntrestName = d.InterestName,
-            //                    }).ToListAsync();
 
-            
-
-
-            //return await _appContext.Interests
-            //    .FirstOrDefaultAsync(p => p.Id == id);
-        //}
 
         public async Task<Interest> Update(Interest Entity)
         {
@@ -70,11 +55,36 @@ namespace Labb4AvanceradNET.Models
 
                 result.InterestName = Entity.InterestName;
                 result.Description = Entity.Description;
-                
+
                 await _appContext.SaveChangesAsync();
                 return result;
             }
             return null;
+        }
+
+
+        public async Task<IEnumerable<Interest>> GetUserWithInterests(int id)
+        {
+
+
+            //return await _appContext.Interests.Include(p => p.User).Where(i => i.UserId == id).ToListAsync(); <---- hämta username med alla kopplade intresse
+
+            return await _appContext.Interests.Where(i => i.UserId == id).ToArrayAsync(); // <---- hämtar bara all intressen kopplade till ett usedId
+
+        }
+        Task<IEnumerable<Interest>> IProgramRepository<Interest>.GetUserWithWebbsites(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<Interest>> IProgramRepository<Interest>.GetUserWithInterestWebbsites(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<Interest>> IProgramRepository<Interest>.SearchUsers(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,19 +1,15 @@
+using Labb4AvanceradNET.API.Models;
+using Labb4AvanceradNET.API.Services;
 using Labb4AvanceradNET.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Labb4AvanceradNET.API
+
+namespace Labb4AvanceradNET.API.API
 {
     public class Startup
     {
@@ -35,7 +31,8 @@ namespace Labb4AvanceradNET.API
             //services AddScoped
             services.AddScoped<IProgramRepository<User>, UserRepository>();
             services.AddScoped<IProgramRepository<Interest>, InterestRepository>();
-            services.AddScoped<IProgramRepository<Webbsite>, WebbsiteRepository>();
+            services.AddScoped<IProgramRepository<Website>, WebsiteRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

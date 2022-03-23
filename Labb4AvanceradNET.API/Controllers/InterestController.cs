@@ -1,4 +1,5 @@
-﻿
+﻿using Labb4AvanceradNET.API.Services;
+using Labb4AvanceradNET.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Labb4AvanceradNET.Models
+namespace Labb4AvanceradNET.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -31,7 +32,7 @@ namespace Labb4AvanceradNET.Models
             }
 
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Interest>> GetInterest(int id)
         {
             try
@@ -39,7 +40,7 @@ namespace Labb4AvanceradNET.Models
                 var result = await _interestRepo.GetSingel(id);
                 if (result == null)
                 {
-                    return NotFound();
+                    return NotFound($"Interest with Id: '{id}' could not be found in the database");
                 }
                 return result;
             }
@@ -54,20 +55,23 @@ namespace Labb4AvanceradNET.Models
         {
             try
             {
-                if (newInterest == null)
-                {
-                    return BadRequest();
-                }
 
                 var createdInterest = await _interestRepo.Add(newInterest);
 
-                return CreatedAtAction(nameof(GetInterest), new { id = createdInterest.Id }, createdInterest);
+
+                if (newInterest != null)
+                {
+                    return Created("", createdInterest);
+                }
+
+                return NotFound("Error");
+
 
             }
             catch (Exception)
             {
 
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error to connect to database.");
             }
 
 
@@ -81,7 +85,7 @@ namespace Labb4AvanceradNET.Models
                 var deleteInterest = await _interestRepo.GetSingel(id);
                 if (deleteInterest == null)
                 {
-                    return NotFound($"Interest with ID : {id} was not found.");
+                    return NotFound($"Interest with Id: '{id}' could not be found in the database");
                 }
 
                 return await _interestRepo.Delete(id);
@@ -107,7 +111,7 @@ namespace Labb4AvanceradNET.Models
                 var interestToUpdate = await _interestRepo.GetSingel(id);
                 if (interestToUpdate == null)
                 {
-                    return NotFound($"Interest with ID : {id} was not found.");
+                    return NotFound($"Interest with Id: '{id}' could not be found in the database");
                 }
                 return await _interestRepo.Update(interest);
 
@@ -119,5 +123,32 @@ namespace Labb4AvanceradNET.Models
                     "Error to update interest in database.");
             }
         }
+        [HttpGet("{userinterests}")]
+
+        public async Task<ActionResult<Interest>> GetUserWithInterests(int id)
+        {
+
+            try
+            {
+                var result = await _interestRepo.GetUserWithInterests(id);
+                if (result.Any())
+                {
+                    return Ok(result);
+
+                }
+                return NotFound($"User with Id: '{id}' could not be found in the database");
+                
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error to find users interests");
+            }
+
+
+        }
+
+
+
     }
 }
