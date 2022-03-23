@@ -11,7 +11,9 @@
  ![bild](https://user-images.githubusercontent.com/91311247/159766844-3916f69c-d4eb-4fab-a111-fdc3df3bb414.png)
  
  ### Koppla en person till ett nytt intresse
+ ### POST
  ![bild](https://user-images.githubusercontent.com/91311247/159767440-979d43ad-9c39-4546-a432-4fea8bbbe774.png)
+ ### PUT
  ![bild](https://user-images.githubusercontent.com/91311247/159770972-8097f4d9-1a0e-4443-8fc9-a2d0abca870b.png)
 
  
