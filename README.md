@@ -15,6 +15,11 @@
  ![bild](https://user-images.githubusercontent.com/91311247/159767440-979d43ad-9c39-4546-a432-4fea8bbbe774.png)
  ##### Modifierar ett existerande intresse och ändrar UserId till 1 via PUT
  ![bild](https://user-images.githubusercontent.com/91311247/159770972-8097f4d9-1a0e-4443-8fc9-a2d0abca870b.png)
+ 
+ ### Lägga in nya länkar för en specifik person och ett specifikt intresse
+ ![bild](https://user-images.githubusercontent.com/91311247/159772351-c2809088-8daf-413a-8d9a-0b3cf3bb2875.png)
 
+ ### De möjlighet till den som anropar APIet och efterfrågar en person att direkt få ut 
+ ### alla intressen och alla länkar för den personen direkt i en hierarkisk JSON-fil
  
 
