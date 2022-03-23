@@ -19,7 +19,7 @@
  #### Lägga in nya länkar för en specifik person och ett specifikt intresse
  ![bild](https://user-images.githubusercontent.com/91311247/159772351-c2809088-8daf-413a-8d9a-0b3cf3bb2875.png)
 --------------------------------------------------------------------------------------------------------------
- #### De möjlighet till den som anropar APIet och efterfrågar en person att direkt få ut 
- #### alla intressen och alla länkar för den personen direkt i en hierarkisk JSON-fil
+ ##### De möjlighet till den som anropar APIet och efterfrågar en person att direkt få ut alla intressen och alla länkar för den personen direkt i en hierarkisk JSON-fil
+ 
  
 
