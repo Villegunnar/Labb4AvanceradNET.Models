@@ -20,6 +20,9 @@
  ![bild](https://user-images.githubusercontent.com/91311247/159772351-c2809088-8daf-413a-8d9a-0b3cf3bb2875.png)
 --------------------------------------------------------------------------------------------------------------
  ##### De möjlighet till den som anropar APIet och efterfrågar en person att direkt få ut alla intressen och alla länkar för den personen direkt i en hierarkisk JSON-fil
- 
- 
+ ![bild](https://user-images.githubusercontent.com/91311247/159772961-90119c48-a17d-4a35-947b-86836914f3b2.png)
+--------------------------------------------------------------------------------------------------------------
+ ##### Ge möjlighet för den som anropar APIet att filtrera vad den får ut, som en sökning. Exempelvis som jag skickar med “to” till hämtning av alla personer vill jag ha   de som har ett “to” i namnet så som “tobias” eller “tomas”. Detta kan du sen skapa för alla anropen om du vill.
+ ![bild](https://user-images.githubusercontent.com/91311247/159773197-29302717-c638-4f25-9405-84d6f594174d.png)
+
 
