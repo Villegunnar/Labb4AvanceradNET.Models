@@ -7,3 +7,12 @@
  ### Hämta alla intressen som är kopplade till en specifik person
 ![bild](https://user-images.githubusercontent.com/91311247/159766403-cbcabb7d-ccab-42df-90a7-6b40643b2228.png)
 
+ ### Hämta alla länkar som är kopplade till en specifik person
+ ![bild](https://user-images.githubusercontent.com/91311247/159766844-3916f69c-d4eb-4fab-a111-fdc3df3bb414.png)
+ 
+ ### Koppla en person till ett nytt intresse
+ ![bild](https://user-images.githubusercontent.com/91311247/159767440-979d43ad-9c39-4546-a432-4fea8bbbe774.png)
+ ![bild](https://user-images.githubusercontent.com/91311247/159770972-8097f4d9-1a0e-4443-8fc9-a2d0abca870b.png)
+
+ 
+
